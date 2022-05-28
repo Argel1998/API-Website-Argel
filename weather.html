@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/ccbd4d6bc1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/weather.css" />
+    <title>Weather API</title>
+</head>
+
+<body>
+    <!--Header-->
+
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#home">
+                        <h1>Tomorrow's Web</h1>
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <div>
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a href="index.html" data-after="Home">Home</a></li>
+                        <li><a href="index.html#list" data-after="Artist">API</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Weather API Section-->
+    <section id="weathers">
+
+        <div> 
+            <div style="margin-top: 40px;">
+                <div class="heading">
+                    <h2>Weather API</h2>
+                    <p style="color: white; font-size: 15px; padding-bottom: 20px; padding-left: 40px;">
+                        Weather API's provide access to weather forecasts around the world. Accessing to the planets
+                        most accurate weather, ocean, environment
+                        and climate data for every location on earth. There are a ton of Weather API available
+                        today with each of their own unique features to detect weather data and display for every person
+                        to see.
+                    </p>
+                    <p style="color: white; font-size: 15px; padding-bottom: 20px; padding-left: 40px;">
+                        The API shown below can detect the temperature of every country when searched and shows weather
+                        details of its humidity, wind speed, and cloudy climate.
+                    </p>
+                </div>
+            </div>
+
+            <div class="weather-app">
+                <div class="weather-container">
+                    <h3 class="brand">Weather Weather Lang</h3>
+                    <div>
+                        <h1 class="temp">16&#176;</h1>
+                        <div class="city-time">
+                            <h1 class="name">London</h1>
+
+                            <span class="time">06:09</span>
+                            - <span class="date">Monday Sep 19</span>
+
+                        </div>
+                        <div class="weather">
+                            <img src="icons/night/113.png" class="icon" alt="icon" width="50" height="50">
+                            <span class="condition">Cloudy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <form id="locationInput">
+                        <input type="text" class="search" placeholder="Search Location...">
+                        <button type="submit" class="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+
+                    <ul class="cities">
+                        <li class="city">New York</li>
+                        <li class="city">Dubai</li>
+                        <li class="city">Paris</li>
+                        <li class="city">Tokyo</li>
+                    </ul>
+
+                    <ul class="details">
+                        <h4>Weather Details</h4>
+                        <li>
+                            <span>Cloudy</span>
+                            <span class="cloud">89%</span>
+                        </li>
+                        <li>
+                            <span>Humidity</span>
+                            <span class="humidity">64%</span>
+                        </li>
+                        <li>
+                            <span>Wind</span>
+                            <span class="wind">8km/h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="Scripts/weather.js"></script>
+</body>
+
+</html>
