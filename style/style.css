@@ -1,0 +1,707 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+    background: #1d061a;
+}
+
+  
+h2 {
+    font-size: 2em;
+    position: relative;
+    display: inline-block;
+    margin: 30px;
+    color:whitesmoke;
+    text-transform: uppercase;
+}
+
+h2:not(
+  .explore h2, .trial h2, footer h2
+)::before,
+.explore h3::before {
+  content: '';
+  background: linear-gradient(
+    90deg,
+    rgba(72, 252, 139, 0) 0%,
+    #48fc8b 50%,
+    rgba(72, 252, 139, 0) 100%
+  );
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.5em;
+  width: 100%;
+  height: 0.1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.brand h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+
+
+/* Header Section */
+#header {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+
+#header .header {
+  min-height: 1vh;
+  background-color: rgba(31, 30, 30, 0.24);
+  transition: 0.3s ease background-color;
+}
+
+#header .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+}
+
+#header .nav-list ul {
+  list-style: none;
+  position: absolute;
+  background-color: #1f1e1e;
+  width: 100vw;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.5s ease;
+}
+
+#header .nav-list ul.active {
+  left: 0;
+}
+
+#header .nav-list ul a {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+}
+
+#header .nav-list ul li:hover a {
+  color: #00FF7F;;
+}
+
+/* Ending Header */
+/* Home Section */
+
+
+#home {
+  background-image: url(../images/green-grad.jpeg);
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+}
+
+#home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+#home .home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  justify-content: flex-start;
+}
+
+#home h1 {
+  display: block;
+  color: lightgray;
+  width: fit-content;
+  font-size: 4rem;
+  position: relative;
+  color: transparent;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1s;
+}
+
+#home h1:nth-child(1) {
+  animation-delay: 1s;
+}
+
+#home h1:nth-child(2) {
+  animation-delay: 2s;
+}
+
+#home h1:nth-child(3) {
+  animation: text_reveal_WSname 0.5s ease forwards;
+  animation-delay: 3s;
+}
+
+#home h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #00FF7F;
+  animation: text_reveal_box 1s ease;
+  animation-delay: 0.3s;
+}
+
+#home h1:nth-child(1) span {
+  animation-delay: 0.5s;
+}
+
+#home h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+
+#home h1:nth-child(3) span {
+  animation-delay: 2.5s;
+}
+
+.loader {
+    padding-top:100px ;
+    padding-left: 250px;
+    position: relative;
+    transform: skewY(-15deg) translateX(50px) translateY(50px);
+    animation: animateColor 2.5s linear infinite;
+}
+
+@keyframes animateColor
+{
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.loader::before{
+    content: '';
+    position: absolute;
+    top: 300px;
+    width: 300px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.1);
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    filter: blur(20px);
+
+}
+
+.loader span {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    display: block;
+    background: #3e3f46;
+    transition: 0.5s;
+    z-index: var(--i);
+    animation: animate 4s ease-in-out infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate {
+    0%,100% {
+        transform: translateX(-70px);
+    }
+    50% {
+        transform: translateX(70px);
+    }
+}
+
+.loader span:hover {
+    background-color: #33a3ee;
+    transition: 0s;
+}
+
+.loader span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150px;
+    height: 100%;
+    width: 150px;
+    background: #2e3133;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+}
+
+.loader span:hover::before {
+    background: #1f5378;
+    transition: 0s;
+}
+
+.loader span::after {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: #f00;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    background: #35383e;
+    transition:  0.5s;
+}
+
+.loader span:hover::after {
+    background: #2982b9;
+    transition: 0s;
+}
+
+
+/* Ending of Home section */
+
+/* API List */
+.titles {
+    margin: 40px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.home-container .box {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transform: 0.5s;
+}
+
+.home-container .box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transform: 0.5s;
+}
+
+.home-container .box::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transform: 0.5s;
+    filter: blur(30px);
+    transition: 0.5s;
+    
+}
+
+.home-container .box:hover:before,
+.home-container .box:hover:after {
+    transform: skewX(0deg);
+    left: 20px;
+    width: calc(100% - 90px);
+}
+
+.home-container .box:nth-child(1):before,
+.home-container .box:nth-child(1):after {
+    background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.home-container .box:nth-child(2):before,
+.home-container .box:nth-child(2):after {
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.home-container .box:nth-child(3):before,
+.home-container .box:nth-child(3):after {
+    background: linear-gradient(315deg, #ee03ff, #0084ff);
+}
+
+.home-container .box span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
+}
+
+.home-container .box span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animates 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.home-container .box:hover span::before {
+    top: -50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+
+}
+
+.home-container .box span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animates 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    animation-delay: -1s;
+}
+
+.home-container .box:hover span::after {
+    bottom: -50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+
+}
+
+@keyframes animates {
+    0%,100% {
+        transform: translateY(10px)
+    }
+    50% {
+        transform: translateY(-10px)
+    }
+}
+
+.home-container .box .content {
+    position: relative;
+    left: 0;
+    padding: 40px 60px;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    transform: 0.5s;
+    color: #fff;
+}
+
+.home-container .box:hover .content {
+    left: -25px;
+    padding: 60px 40px;
+}
+
+.home-container .box .content h2 {
+    font-size: 2em;
+    text-align: center;
+    color:#fff;
+    margin-bottom: 10px;
+}
+
+.home-container .box .content a {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1em;
+    color: #111;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* End of API List*/
+
+/*Information title of APIS*/
+
+/* Weather API CSS */
+
+#weathers .weather-app {
+    min-height: 100vh;
+    background-image: url(./images/day/cloudy.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    transition: 500ms;
+    opacity: 0; /* change to '0' 
+    once the whole app is finished */
+}
+
+/*Add background overlay*/
+#weathers .weather-app::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+#weathers .weather-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2em 3em 4em 3em;
+}
+
+#weathers .weather-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.city-time, .temp, .weather {
+    margin: 0 1em;
+    font-size: 15px;
+}
+
+.city-time h1 {
+    margin: 0;
+    margin-bottom: 0.2em;
+}
+  
+.temp {
+    font-size: 10em;
+    margin: 0;
+}
+  
+.weather img {
+    display: block;
+    margin: 0.5em 0;
+}
+
+#weathers .brand {
+    margin: 10px;
+    font-size: 20px;
+}
+  
+.panel {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(110, 110, 110, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 1;
+    padding: 3em 2em;
+    overflow-Y: scroll;
+}
+  
+.panel form {
+    margin-bottom: 3em;
+}
+  
+.submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.5em;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: #fa6d1b;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: 0.4s;
+}
+  
+.submit:hover {
+    background: #fff !important;
+    color: #000;
+}
+  
+.search {
+    background: none;
+    border: none;
+    border-bottom: 1px #ccc solid;
+    padding: 0 1em 0.5em 0;
+    width: 90%;
+    color: #fff;
+    font-size: 18px;
+}
+  
+.search:focus {
+    outline: none;
+}
+  
+.search::placeholder {
+    color: #ccc;
+}
+  
+.panel ul {
+    padding: 0 0 1em 0;
+    margin: 2em 0;
+    border-bottom: 1px #ccc solid;
+}
+  
+.panel ul li {
+    color: #ccc;
+    margin: 2em 0;
+}
+  
+.panel ul h4 {
+    margin: 3em 0;
+    font-size: 15px;
+}
+  
+.city {
+   display: block;
+   cursor: pointer;
+   font-size: 17px;
+}
+  
+.city:hover {
+    color: #fff;
+}
+  
+.details li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+}
+  
+/* End of Weather API CSS */
+
+
+
+
+/* Keyframes */
+
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes text_reveal_WSname {
+  100% {
+    color: #00FF7F;;
+  }
+}
+@keyframes text_reveal {
+  100% {
+    color: lightgray;
+  }
+}
+/* Ending Keyframes */
+
+
+
+/* Media Queries 801-1023 width */
+
+@media screen and (min-width: 864px) {
+
+  #header .nav-list ul {
+    position: initial;
+    display: block;
+    height: auto;
+    width: fit-content;
+    background-color: transparent;
+  }
+
+  #header .nav-list ul li {
+    display: inline-block;
+  }
+
+  #header .nav-list ul li a {
+    font-size: 1.5rem;
+  }
+}
