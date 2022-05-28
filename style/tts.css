@@ -1,0 +1,281 @@
+/* Import Google Font - Poppins */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1d061a;
+}
+
+html {
+    font-size: 8px;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+}
+
+  
+h2 {
+    color:white;
+    font-size: 2em;
+    position: relative;
+    display: inline-block;
+    margin: 30px;
+    color:whitesmoke;
+    text-transform: uppercase;
+}
+
+h2:not(
+  .explore h2, .trial h2, footer h2
+)::before,.explore h3::before {
+  content: '';
+  background: linear-gradient(
+    90deg,
+    rgba(72, 252, 139, 0) 0%,
+    #48fc8b 50%,
+    rgba(72, 252, 139, 0) 100%
+  );
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.5em;
+  width: 100%;
+  height: 0.1em;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.brand h1 {
+
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+#header {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+  
+#header .header {
+    min-height: 1vh;
+    background-color: rgba(31, 30, 30, 0.24);
+    transition: 0.3s ease background-color;
+}
+  
+#header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+}
+  
+#header .nav-list ul {
+    list-style: none;
+    position: absolute;
+    background-color: #1f1e1e;
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s ease;
+}
+  
+#header .nav-list ul.active {
+    left: 0;
+}
+  
+#header .nav-list ul a {
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+  
+#header .nav-list ul li:hover a {
+    color: #00FF7F;
+}
+
+#containerr {
+    flex-direction: column;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+/* Start of TTS API CSS */
+::selection{
+  color: #fff;
+  background: #5256AD;
+}
+.wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 370px;
+    padding: 50px 30px;
+    border-radius: 7px;
+    background: #fff;
+    box-shadow: 7px 7px 20px rgba(0,0,0,0.05);
+}
+.wrapper header{
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+}
+.wrapper form{
+  margin: 35px 0 20px;
+}
+form .row{
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+form .row label{
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+form .row:nth-child(2) label{
+  font-size: 17px;
+}
+form :where(textarea, select, button){
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+}
+form .row textarea{
+  resize: none;
+  height: 110px;
+  font-size: 15px;
+  padding: 8px 10px;
+  border: 1px solid #999;
+}
+form .row textarea::-webkit-scrollbar{
+  width: 0px;
+}
+form .row .outer{
+  height: 47px;
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  border: 1px solid #999;
+}
+form .row select{
+  font-size: 14px;
+  background: none;
+}
+form .row select::-webkit-scrollbar{
+  width: 8px;
+}
+form .row select::-webkit-scrollbar-track{
+  background: #fff;
+}
+form .row select::-webkit-scrollbar-thumb{
+  background: #888;
+  border-radius: 8px;
+  border-right: 2px solid #ffffff;
+}
+form button{
+  height: 52px;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 10px;
+  background: #228B22;
+  transition: 0.3s ease;
+}
+form button:hover{
+  background: #32CD32;
+  
+}
+@media(max-width: 400px){
+  .wrapper{
+    max-width: 345px;
+    width: 100%;
+  }
+}
+/* End of TTS API CSS */
+
+/* Keyframes */
+
+@keyframes text_reveal_box {
+    50% {
+      width: 100%;
+      left: 0;
+    }
+    100% {
+      width: 0;
+      left: 100%;
+    }
+  }
+  @keyframes text_reveal_WSname {
+    100% {
+      color: #3efe31;
+    }
+  }
+  @keyframes text_reveal {
+    100% {
+      color: lightgray;
+    }
+  }
+  /* Ending Keyframes */
+  
+
+  
+  
+  
+  /* Media Queries 801-1023 width */
+  
+  @media screen and (min-width: 864px) {
+  
+    #header .nav-list ul {
+      position: initial;
+      display: block;
+      height: auto;
+      width: fit-content;
+      background-color: transparent;
+    }
+  
+    #header .nav-list ul li {
+      display: inline-block;
+    }
+  
+    #header .nav-list ul li a {
+      font-size: 1.5rem;
+    }
+  }
