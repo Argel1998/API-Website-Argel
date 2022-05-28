@@ -1,0 +1,344 @@
+/* Import Google Font - Poppins */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+    font-size: 8px;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1d061a;
+}
+  
+h2 {
+    font-size: 2em;
+    position: relative;
+    display: inline-block;
+    margin: 30px;
+    color:whitesmoke;
+    text-transform: uppercase;
+}
+
+h2:not(
+  .explore h2, .trial h2, footer h2
+)::before,.explore h3::before {
+  content: '';
+  background: linear-gradient(
+    90deg,
+    rgba(72, 252, 139, 0) 0%,
+    #48fc8b 50%,
+    rgba(72, 252, 139, 0) 100%
+  );
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.5em;
+  width: 100%;
+  height: 0.1em;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+#header {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+  
+#header .header {
+    min-height: 1vh;
+    background-color: rgba(31, 30, 30, 0.24);
+    transition: 0.3s ease background-color;
+}
+  
+#header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+}
+  
+#header .nav-list ul {
+    list-style: none;
+    position: absolute;
+    background-color: #1f1e1e;
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s ease;
+}
+  
+#header .nav-list ul.active {
+    left: 0;
+}
+  
+#header .nav-list ul a {
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+  
+#header .nav-list ul li:hover a {
+    color: #00FF7F;
+}
+
+#containerr {
+    flex-direction: column;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+/* Start of Weather API CSS */
+#weathers .weather-app {
+    margin: 30px;
+    min-height: 100vh;
+    background-image: url(./images/day/cloudy.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    transition: 500ms;
+    opacity: 0; /* change to '0' 
+    once the whole app is finished */
+}
+
+/*Add background overlay*/
+#weathers .weather-app::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+#weathers .weather-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2em 3em 4em 3em;
+}
+
+#weathers .weather-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.city-time, .temp, .weather {
+    margin: 0 1em;
+    font-size: 15px;
+}
+
+.city-time h1 {
+    margin: 0;
+    margin-bottom: 0.2em;
+}
+  
+.temp {
+    font-size: 10em;
+    margin: 0;
+}
+  
+.weather img {
+    display: block;
+    margin: 0.5em 0;
+}
+
+#weathers .brand {
+    margin: 10px;
+    font-size: 20px;
+}
+  
+.panel {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(110, 110, 110, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 1;
+    padding: 3em 2em;
+    overflow-Y: scroll;
+}
+  
+.panel form {
+    margin-bottom: 3em;
+}
+  
+.submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.5em;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: #fa6d1b;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: 0.4s;
+}
+  
+.submit:hover {
+    background: #fff !important;
+    color: #000;
+}
+  
+.search {
+    background: none;
+    border: none;
+    border-bottom: 1px #ccc solid;
+    padding: 0 1em 0.5em 0;
+    width: 90%;
+    color: #fff;
+    font-size: 18px;
+}
+  
+.search:focus {
+    outline: none;
+}
+  
+.search::placeholder {
+    color: #ccc;
+}
+  
+.panel ul {
+    padding: 0 0 1em 0;
+    margin: 2em 0;
+    border-bottom: 1px #ccc solid;
+}
+  
+.panel ul li {
+    color: #ccc;
+    margin: 2em 0;
+}
+  
+.panel ul h4 {
+    margin: 3em 0;
+    font-size: 15px;
+}
+  
+.city {
+   display: block;
+   cursor: pointer;
+   font-size: 17px;
+}
+  
+.city:hover {
+    color: #fff;
+}
+  
+.details li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+}
+  
+/* End of Weather API CSS*/
+
+/* Keyframes */
+
+@keyframes text_reveal_box {
+    50% {
+      width: 100%;
+      left: 0;
+    }
+    100% {
+      width: 0;
+      left: 100%;
+    }
+  }
+  @keyframes text_reveal_WSname {
+    100% {
+      color: #3efe31;
+    }
+  }
+  @keyframes text_reveal {
+    100% {
+      color: lightgray;
+    }
+  }
+  /* Ending Keyframes */
+  
+  
+  
+  /* Media Queries 801-1023 width */
+  
+  @media screen and (min-width: 864px) {
+  
+    #header .nav-list ul {
+      position: initial;
+      display: block;
+      height: auto;
+      width: fit-content;
+      background-color: transparent;
+    }
+  
+    #header .nav-list ul li {
+      display: inline-block;
+    }
+  
+    #header .nav-list ul li a {
+      font-size: 1.5rem;
+    }
+  }
